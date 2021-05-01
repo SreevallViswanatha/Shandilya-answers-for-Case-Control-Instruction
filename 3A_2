@@ -1,0 +1,19 @@
+// Accept quantity and price from the user and display net amount to be paid. Apply 20% discount if quantity is more than 5 and 10% discount if quantity is more than 2. Apply additional 10% discount if the total amount crossed $1000.
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+    float quantity, price, net_amount;
+    printf("Enter the quantity:");
+    scanf("%f", &quantity);
+    printf("Enter the price for each item:");
+    scanf("%f", &price);
+    net_amount=price*quantity;
+    if(quantity>5)
+        net_amount*=4.0/5;
+    else if(quantity>2)
+        net_amount*=9.0/10;
+    if(net_amount>1000)
+        net_amount*=9.0/10;
+    printf("The net amount is:%.2f", net_amount);
+}
